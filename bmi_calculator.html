@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BMI Calculator</title>
+    <link rel="icon" href="bmi.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div>
+        <h2>BMI Calculator</h2>
+
+        <form method="post" action="#" onsubmit="calculate(); return false;">
+
+            <label for="height">Height(cm)</label>
+            <input type="text" id="height">
+            <br>
+
+            <label for="weight">Weight(kg)</label>
+            <input type="text" id="weight">
+            <br>
+
+            <input class="btn" type="submit" value="calculate">
+            <p id="result"></p>
+            <p id="category"></p>
+            <!-- <p id="bmi_info"></p> -->
+
+        </form>
+    </div>
+
+
+    <script type="text/javascript">
+        function calculate() {
+            if (document.getElementById('height').value == "" || document.getElementById('weight').value == "") {
+                alert('Please fill in the form');
+            } else {
+                var height = document.getElementById('height').value;
+                var weight = document.getElementById('weight').value;
+                var bmi = weight / (height / 100 * height / 100);
+                var bmiresult = (bmi.toFixed(2));
+
+                document.getElementById("result").innerHTML = "<hr><h2>Your BMI is <strong>" + bmiresult + "</strong></h2>";
+
+                if(bmiresult < 18.5){
+                    document.getElementById("category").innerHTML = "<h2>(<strong>Underweight</strong>)</h2>";
+                }else if(bmiresult >= 18.5 && bmiresult <= 24.9){
+                    document.getElementById("category").innerHTML = "<h2>(<strong>Normal</strong>)</h2>";
+                }else if(bmiresult >= 25.0 && bmiresult <= 29.9){
+                    document.getElementById("category").innerHTML = "<h2>(<strong>Overweight</strong>)</h2>";
+                }else if(bmiresult >= 30.0 && bmiresult <= 34.9){
+                    document.getElementById("category").innerHTML = "<h2>(<strong>Obese</strong>)</h2>";
+                }else{
+                    document.getElementById("category").innerHTML = "<h2>(<strong>Extremely Obese</strong>)</h2>";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
