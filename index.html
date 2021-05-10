@@ -41,13 +41,13 @@
 
                 document.getElementById("result").innerHTML = "<hr><h2>Your BMI is <strong>" + bmiresult + "</strong></h2>";
 
-                if(bmiresult < 18.5){
+                if(bmiresult < 17.0){
                     document.getElementById("category").innerHTML = "<h2>(<strong>Underweight</strong>)</h2>";
-                }else if(bmiresult >= 18.5 && bmiresult <= 24.9){
+                }else if(bmiresult >= 17.0 && bmiresult <= 24.0){
                     document.getElementById("category").innerHTML = "<h2>(<strong>Normal</strong>)</h2>";
-                }else if(bmiresult >= 25.0 && bmiresult <= 29.9){
+                }else if(bmiresult >= 24.0 && bmiresult <= 30.0){
                     document.getElementById("category").innerHTML = "<h2>(<strong>Overweight</strong>)</h2>";
-                }else if(bmiresult >= 30.0 && bmiresult <= 34.9){
+                }else if(bmiresult >= 30.0 && bmiresult <= 35.0){
                     document.getElementById("category").innerHTML = "<h2>(<strong>Obese</strong>)</h2>";
                 }else{
                     document.getElementById("category").innerHTML = "<h2>(<strong>Extremely Obese</strong>)</h2>";
